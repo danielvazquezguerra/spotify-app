@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
 })
 export class SpotifyService {
 
-  BEARER:string = 'BQDiXsWKC_Nd9M20GcxdXNRmNXhg1u1QidExvB2ZuYJwkcIx4aL0iWRjMP47G3yc1x9irHuM3aqxhYLhWGk';
+  BEARER:string = 'BQBzCokxLDlEx0xUPrPkF7cdj32zyN5XIeaicXtWzH8Po8mwVOICJ0VuhhgRGz-hjBFKnZn6LWe7WcuH-sE';
 
   constructor(
 
@@ -21,9 +21,7 @@ getNewReleases() {
     'Authorization':`Bearer ${this.BEARER}`
   })
   return this.http.get( URL, { headers } )
-    .pipe(map(data => {
-      return data['albums'].items;
-    }))
+    .pipe(map(data => data['albums'].items));
 }
 
 getArtist(termino:string) {
@@ -32,7 +30,8 @@ getArtist(termino:string) {
   const headers = new HttpHeaders({
     'Authorization':`Bearer ${this.BEARER}`
   })
-  return this.http.get( URL_SEARCH, { headers } );
+  return this.http.get( URL_SEARCH, { headers } )
+    .pipe(map( data => data['artists'].items));
 }
 
 
