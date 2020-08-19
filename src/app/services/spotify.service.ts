@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,10 @@ getNewReleases() {
   const headers = new HttpHeaders({
     'Authorization':`Bearer ${this.BEARER}`
   })
-  return this.http.get( URL, { headers } );
+  return this.http.get( URL, { headers } )
+    .pipe(map(data => {
+      return data['albums'].items;
+    }))
 }
 
 getArtist(termino:string) {
