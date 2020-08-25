@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
 })
 export class SpotifyService {
 
-  BEARER:string = 'BQAQgS6-SUu-QAVrLPQs7-ld9OX39FaO7_iLzqLoXMrbMUxADGIT_ypzipBUxRDSHmZKrA_x_bxXmoT5jVY';
+  BEARER:string = 'BQCZJnbRAAqjmFgquUT_iO6qQw9HE52IfK6mKbCqOt67ewsq6MLn1slaAK_Ok969oxBecvrUTGr76m1IZgk';
 
   constructor(
 

@@ -8,7 +8,7 @@ import { SpotifyService } from 'src/app/services/spotify.service';
 })
 export class SearchComponent implements OnInit {
 
-  artists:any[] = []; 
+  artists: any[] = []; 
 
   constructor( private spotify:SpotifyService) { }
 
