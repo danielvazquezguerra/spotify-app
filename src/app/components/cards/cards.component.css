@@ -1,0 +1,23 @@
+.card {
+    border: 0px;
+    background-color: transparent;
+    margin-bottom: 2em;
+}
+
+h5 {
+    font-family: 'Gotham',sans-serif;
+    font-weight: 800;
+    color: white;
+}
+
+.badge {
+
+    background-color: transparent;
+    color: #1aab00;
+    border-radius: 0px;
+    font-family: 'Gotham',sans-serif;
+    font-size: 0.9em;
+    font-weight: 400;
+
+}
+
