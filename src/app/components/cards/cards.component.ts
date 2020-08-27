@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 
 @Component({
@@ -6,13 +6,24 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.css']
 })
-export class CardsComponent implements OnInit {
+export class CardsComponent {
 
  @Input() items: any[] = [];
 
   constructor() { }
 
-  ngOnInit(): void {
+  verArtista(item:any) {
+
+    let artistId;
+
+    if ( item.type === 'artist' ) {
+      artistId = 'artist ' + item.id;
+    }else {
+      artistId = 'artistArray ' + item.artists[0].id
+    }
+
+    console.log(artistId);
+
   }
 
 }
