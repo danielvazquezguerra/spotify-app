@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -10,19 +11,20 @@ export class CardsComponent {
 
  @Input() items: any[] = [];
 
-  constructor() { }
+  constructor( private router:Router) { }
 
   verArtista(item:any) {
 
     let artistId;
 
     if ( item.type === 'artist' ) {
-      artistId = 'artist ' + item.id;
+      artistId = item.id;
     }else {
-      artistId = 'artistArray ' + item.artists[0].id
+      artistId = item.artists[0].id
     }
 
     console.log(artistId);
+    this.router.navigate(['/artist', artistId])
 
   }
 
